@@ -6,7 +6,7 @@ import { setLanguage } from '../i18n'
 export type EndOfLine = 'default' | 'lf' | 'crlf'
 export type TitleBarStyle = 'custom' | 'native'
 export type StartUpAction = 'restoreAll' | 'lastSession' | 'blank'
-export type TextDirection = 'ltr' | 'rtl'
+export type TextDirection = 'auto' | 'ltr' | 'rtl'
 export type BulletListMarker = '*' | '+' | '-'
 export type OrderListDelimiter = '.' | ')'
 export type PreferHeadingStyle = 'atx' | 'setext'
@@ -158,7 +158,7 @@ export const usePreferencesStore = defineStore('preferences', {
     defaultDirectoryToOpen: '',
     lastOpenedFolder: '',
     treePathExcludePatterns: [],
-    language: 'en',
+    language: 'ar',
     showPandocConvert: false,
 
     editorFontFamily: 'Open Sans',
@@ -181,7 +181,7 @@ export const usePreferencesStore = defineStore('preferences', {
     autoNormalizeLineEndings: false,
 
     trimTrailingNewline: 2,
-    textDirection: 'ltr',
+    textDirection: 'auto',
     hideQuickInsertHint: false,
     imageInsertAction: 'folder',
     imagePreferRelativeDirectory: false,

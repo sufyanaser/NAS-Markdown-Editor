@@ -1,0 +1,55 @@
+name: NAS Windows release
+
+# Builds the Windows x64 installer for an NAS tag (nas-v<semver>) and attaches
+# it to a DRAFT GitHub release. Drafts are invisible to electron-updater, so
+# publishing the draft in the GitHub UI is the approval step that makes the
+# build available to installed clients.
+
+on:
+  push:
+    tags: ['nas-v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows-x64:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify
+        run: |
+          pnpm run lint
+          pnpm --filter @muyajs/core test
+          pnpm --filter marktext run test:unit
+
+      - name: Build installer
+        run: pnpm --filter marktext run build:win:x64
+
+      - name: Create draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --draft \
+            --title "NAS Markdown Editor $GITHUB_REF_NAME" \
+            --notes "Draft build. Publish to make it available to the in-app updater." \
+            dist/nas-markdown-editor-win-x64-*-setup.exe \
+            dist/nas-markdown-editor-win-x64-*-setup.exe.blockmap \
+            dist/latest.yml

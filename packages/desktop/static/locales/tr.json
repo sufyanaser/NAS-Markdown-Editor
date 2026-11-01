@@ -602,6 +602,7 @@
         "title": "Çeşitli",
         "textDirection": {
           "title": "Metin Yönü",
+          "auto": "Otomatik",
           "ltr": "Soldan Sağa",
           "rtl": "Sağdan Sola"
         },

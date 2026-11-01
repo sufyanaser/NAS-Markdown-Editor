@@ -3,6 +3,7 @@ import type { IAtxHeadingState } from '../../../state/types';
 import type Content from '../../base/content';
 import type { TBlockPath } from '../../types';
 import { CLASS_NAMES } from '../../../config';
+import { textBlockDirectionAttributes } from '../../../rtl/textDirection';
 import { mixins } from '../../../utils';
 import Parent from '../../base/parent';
 import { isHiddenByFold, refreshFoldVisibility } from '../../folding';
@@ -48,6 +49,7 @@ class AtxHeading extends Parent {
         this.tagName = `h${meta.level}`;
         this.meta = meta;
         this.classList = ['mu-atx-heading'];
+        this.attributes = textBlockDirectionAttributes(muya);
         this.createDomNode();
         this._foldToggle = HeadingFoldToggle.create(muya);
     }

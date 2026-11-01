@@ -597,6 +597,11 @@ const commands: CommandDescriptor[] = [
     id: 'view.text-direction',
     subcommands: [
       {
+        id: 'view.text-direction-auto',
+        description: 'Auto',
+        value: 'auto'
+      },
+      {
         id: 'view.text-direction-ltr',
         description: 'Left to Right',
         value: 'ltr'

@@ -602,6 +602,7 @@
         "title": "其他",
         "textDirection": {
           "title": "文字方向",
+          "auto": "自動",
           "ltr": "從左到右",
           "rtl": "從右到左"
         },

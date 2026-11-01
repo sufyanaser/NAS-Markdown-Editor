@@ -3,7 +3,7 @@ import path from 'path'
 
 export type Translations = Record<string, unknown>
 
-const SUPPORTED_LANGUAGES = ['en', 'zh-CN', 'zh-TW', 'es', 'fr', 'de', 'ja', 'ko', 'nl', 'pt', 'tr', 'ru'] as const
+const SUPPORTED_LANGUAGES = ['en', 'zh-CN', 'zh-TW', 'es', 'fr', 'de', 'ja', 'ko', 'nl', 'pt', 'tr', 'ru', 'ar'] as const
 
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number]
 
@@ -19,6 +19,31 @@ let localesDirectory = path.join(process.cwd(), 'static', 'locales')
 function setLocalesDirectory(directory: string): void {
   localesDirectory = directory
   translationsCache = {}
+}
+
+/**
+ * Keys a partial translation has not provided yet are read from English, so a
+ * missing key shows English text instead of the raw key.
+ */
+function fillMissingFromEnglish(translation: Translations): Translations {
+  const english = loadTranslations('en')
+  if (!english) {
+    return translation
+  }
+
+  const fill = (target: Record<string, unknown>, source: Record<string, unknown>): Record<string, unknown> => {
+    for (const [key, value] of Object.entries(source)) {
+      const current = target[key]
+      if (current === undefined) {
+        target[key] = value
+      } else if (current && typeof current === 'object' && value && typeof value === 'object') {
+        fill(current as Record<string, unknown>, value as Record<string, unknown>)
+      }
+    }
+    return target
+  }
+
+  return fill(translation, english)
 }
 
 /**
@@ -43,7 +68,9 @@ function loadTranslations(language: string): Translations | null {
 
     const content = fs.readFileSync(localePath, 'utf8')
 
-    const translationData: Translations = JSON.parse(content)
+    const translationData: Translations = language === 'en'
+      ? JSON.parse(content)
+      : fillMissingFromEnglish(JSON.parse(content))
 
     translationsCache[language] = translationData
     return translationData

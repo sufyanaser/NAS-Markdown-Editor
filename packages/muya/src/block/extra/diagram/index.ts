@@ -1,6 +1,7 @@
 import type { Muya } from '../../../muya';
 import type { IDiagramMeta, IDiagramState } from '../../../state/types';
 import type { TBlockPath } from '../../types';
+import { fixedLtrDirectionAttributes } from '../../../rtl/textDirection';
 import logger from '../../../utils/logger';
 import { loadLanguage } from '../../../utils/prism';
 import Parent from '../../base/parent';
@@ -57,6 +58,7 @@ class DiagramBlock extends Parent {
         this.tagName = 'figure';
         this.meta = meta;
         this.classList = ['mu-diagram-block'];
+        this.attributes = fixedLtrDirectionAttributes();
         this.createDomNode();
     }
 

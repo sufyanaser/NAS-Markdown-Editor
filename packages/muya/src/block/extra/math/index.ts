@@ -1,6 +1,7 @@
 import type { Muya } from '../../../muya';
 import type { IMathBlockState, IMathMeta } from '../../../state/types';
 import type { TBlockPath } from '../../types';
+import { fixedLtrDirectionAttributes } from '../../../rtl/textDirection';
 import Parent from '../../base/parent';
 import { ScrollPage } from '../../scrollPage';
 
@@ -39,6 +40,7 @@ class MathBlock extends Parent {
         this.tagName = 'figure';
         this.meta = meta;
         this.classList = ['mu-math-block'];
+        this.attributes = fixedLtrDirectionAttributes();
         this.createDomNode();
     }
 

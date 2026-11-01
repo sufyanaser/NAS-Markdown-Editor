@@ -84,6 +84,20 @@ export const setLanguage = async(locale: string): Promise<void> => {
     }
   }
   globalI18n.locale.value = locale
+  applyDocumentLanguage(locale)
+}
+
+// Languages written right-to-left. This drives the interface layout only; the
+// document's text direction is a separate editor preference.
+const RTL_LANGUAGES = new Set(['ar', 'he', 'fa', 'ur'])
+
+export const isRtlLanguage = (locale: string): boolean =>
+  RTL_LANGUAGES.has(locale.split('-')[0].toLowerCase())
+
+const applyDocumentLanguage = (locale: string): void => {
+  if (typeof document === 'undefined') return
+  document.documentElement.lang = locale
+  document.documentElement.dir = isRtlLanguage(locale) ? 'rtl' : 'ltr'
 }
 
 export const getCurrentLanguage = (): string => {

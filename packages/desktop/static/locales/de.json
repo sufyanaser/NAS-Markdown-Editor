@@ -602,6 +602,7 @@
         "title": "Verschiedenes",
         "textDirection": {
           "title": "Textrichtung",
+          "auto": "Automatisch",
           "ltr": "Links nach rechts",
           "rtl": "Rechts nach links"
         },

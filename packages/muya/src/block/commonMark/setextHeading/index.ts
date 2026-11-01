@@ -1,6 +1,7 @@
 import type { Muya } from '../../../muya';
 import type { ISetextHeadingState } from '../../../state/types';
 import type SetextHeadingContent from '../../content/setextHeadingContent';
+import { textBlockDirectionAttributes } from '../../../rtl/textDirection';
 import { mixins } from '../../../utils';
 import Parent from '../../base/parent';
 import LeafQueryBlock from '../../mixins/leafQueryBlock';
@@ -38,6 +39,7 @@ class SetextHeading extends Parent {
         this.tagName = `h${meta.level}`;
         this.meta = meta;
         this.classList = ['mu-setext-heading'];
+        this.attributes = textBlockDirectionAttributes(muya);
         this.createDomNode();
     }
 

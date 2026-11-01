@@ -1,0 +1,110 @@
+name: NAS upstream sync
+
+# Watches marktext/marktext for new v<major>.<minor>.<patch> tags and proposes
+# each one as a pull request into `develop`. The merge is never automatic:
+# the PR is opened only when lint, typecheck, Muya tests and desktop unit tests
+# pass on the merged tree. Branches are only ever pushed fast-forward; nothing
+# is force-pushed and nothing is merged by this workflow.
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: nas-upstream-sync
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_URL: https://github.com/marktext/marktext.git
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.latest.outputs.tag }}
+      needed: ${{ steps.latest.outputs.needed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve latest upstream release tag
+        id: latest
+        run: |
+          latest=$(git ls-remote --tags --refs "$UPSTREAM_URL" 'refs/tags/v*' \
+            | awk -F/ '{print $3}' \
+            | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' \
+            | sort -V | tail -1)
+          if [ -z "$latest" ]; then
+            echo "No upstream release tag found" >&2
+            exit 1
+          fi
+          current=$(cat UPSTREAM_VERSION 2>/dev/null || echo "")
+          echo "upstream=$latest current=$current"
+          echo "tag=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$latest" != "$current" ] && ! gh pr list --state open --head "sync/upstream-$latest" --json number --jq 'length' | grep -qx '[1-9][0-9]*'; then
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  sync:
+    needs: detect
+    if: needs.detect.outputs.needed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TAG: ${{ needs.detect.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Create sync branch
+        run: |
+          git config user.name "nas-upstream-sync"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch "$UPSTREAM_URL" "refs/tags/$TAG:refs/tags/$TAG"
+          git checkout -b "sync/upstream-$TAG"
+          git merge --no-ff --no-edit "$TAG" \
+            -m "chore(sync): merge upstream MarkText $TAG"
+          echo "$TAG" > UPSTREAM_VERSION
+          git add UPSTREAM_VERSION
+          git commit -m "chore(sync): record upstream $TAG" || true
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint and typecheck
+        run: |
+          pnpm run lint
+          pnpm --filter @muyajs/core build:types
+          pnpm --filter marktext run typecheck
+
+      - name: Muya and desktop unit tests
+        run: |
+          pnpm --filter @muyajs/core test
+          pnpm --filter marktext run test:unit
+
+      - name: Push sync branch and open PR
+        run: |
+          git push origin "sync/upstream-$TAG"
+          gh pr create \
+            --base develop \
+            --head "sync/upstream-$TAG" \
+            --title "chore(sync): upstream MarkText $TAG" \
+            --body "Automated merge of \`marktext/marktext@$TAG\` into \`develop\`. Lint, typecheck, Muya tests and desktop unit tests passed on the merged tree. Review the merge and merge manually; this workflow never merges."

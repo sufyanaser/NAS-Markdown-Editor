@@ -2,6 +2,7 @@ import type { Muya } from '../../../muya';
 import type { IHtmlBlockState } from '../../../state/types';
 import type { TBlockPath } from '../../types';
 import { CLASS_NAMES } from '../../../config';
+import { fixedLtrDirectionAttributes } from '../../../rtl/textDirection';
 import Parent from '../../base/parent';
 import { ScrollPage } from '../../scrollPage';
 
@@ -41,6 +42,7 @@ class HTMLBlock extends Parent {
         if (disableHtml)
             this.classList.push(CLASS_NAMES.MU_DISABLE_HTML_RENDER);
 
+        this.attributes = fixedLtrDirectionAttributes();
         this.createDomNode();
     }
 

@@ -602,6 +602,7 @@
         "title": "Divers",
         "textDirection": {
           "title": "Direction du texte",
+          "auto": "Automatique",
           "ltr": "Gauche à droite",
           "rtl": "Droite à gauche"
         },

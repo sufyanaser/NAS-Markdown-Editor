@@ -602,6 +602,7 @@
         "title": "Diversen",
         "textDirection": {
           "title": "Tekstrichting",
+          "auto": "Automatisch",
           "ltr": "Links naar rechts",
           "rtl": "Rechts naar links"
         },

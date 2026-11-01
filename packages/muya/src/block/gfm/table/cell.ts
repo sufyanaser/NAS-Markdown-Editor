@@ -4,6 +4,7 @@ import type { ITableCellMeta, ITableCellState } from '../../../state/types';
 import type TableCellContent from '../../content/tableCell';
 import type Row from './row';
 import type TableInner from './table';
+import { textBlockDirectionAttributes } from '../../../rtl/textDirection';
 import { mixins } from '../../../utils';
 import { LinkedList } from '../../base/linkedList/linkedList';
 import Parent from '../../base/parent';
@@ -70,6 +71,7 @@ class TableBodyCell extends Parent {
             align: meta.align,
         };
         this.classList = ['mu-table-cell'];
+        this.attributes = textBlockDirectionAttributes(muya);
         this.createDomNode();
     }
 

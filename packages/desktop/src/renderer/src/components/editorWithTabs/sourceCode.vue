@@ -22,7 +22,7 @@ import {
 } from '@/util/sourceModeToc'
 import { storeToRefs } from 'pinia'
 import type CodeMirror from 'codemirror'
-import codeMirror, { setCursorAtFirstLine, setTextDirection } from '../../codeMirror'
+import codeMirror, { setCursorAtFirstLine } from '../../codeMirror'
 import { wordCount as getWordCount } from '@muyajs/core'
 import { adjustCursor } from '../../util'
 import bus from '../../bus'
@@ -63,15 +63,6 @@ const isValidMuyaIndexCursor = (cursor: unknown): cursor is MuyaIndexCursorLike 
   const c = cursor as MuyaIndexCursorLike | null | undefined
   return !!(c && c.anchor && c.focus)
 }
-
-watch(
-  () => props.textDirection,
-  (value, oldValue) => {
-    if (value !== oldValue && editor.value) {
-      setTextDirection(editor.value, value)
-    }
-  }
-)
 
 watch(sourceCodeLineNumbers, (value) => {
   editor.value?.setOption('lineNumbers', value)
@@ -407,7 +398,7 @@ onMounted(() => {
   currentTab.value.blocks = undefined
   currentTab.value.cursor = undefined
 
-  const { markdown, muyaIndexCursor, textDirection } = props
+  const { markdown, muyaIndexCursor } = props
   const container = sourceCodeContainer.value
   const codeMirrorConfig: Record<string, unknown> = {
     value: markdown,
@@ -415,7 +406,8 @@ onMounted(() => {
     autofocus: true,
     lineWrapping: true,
     styleActiveLine: true,
-    direction: textDirection,
+    // Markdown source is code: always LTR, independent of the document direction.
+    direction: 'ltr',
     viewportMargin: Infinity
   }
 

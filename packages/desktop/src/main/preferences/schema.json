@@ -208,8 +208,8 @@
   },
   "textDirection": {
     "description": "Editor--The writing text direction",
-    "enum": ["ltr", "rtl"],
-    "default": "ltr"
+    "enum": ["auto", "ltr", "rtl"],
+    "default": "auto"
   },
   "hideQuickInsertHint": {
     "description": "Editor--Hide hint for quickly creating paragraphs",

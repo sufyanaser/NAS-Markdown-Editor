@@ -2,6 +2,7 @@ import type { Muya } from '../../../muya';
 import type { IParagraphState } from '../../../state/types';
 import type ParagraphContent from '../../content/paragraphContent';
 import { CLASS_NAMES } from '../../../config';
+import { textBlockDirectionAttributes } from '../../../rtl/textDirection';
 import { mixins } from '../../../utils';
 import Parent from '../../base/parent';
 import LeafQueryBlock from '../../mixins/leafQueryBlock';
@@ -32,6 +33,7 @@ class Paragraph extends Parent {
         super(muya);
         this.tagName = 'p';
         this.classList = [CLASS_NAMES.MU_PARAGRAPH];
+        this.attributes = textBlockDirectionAttributes(muya);
         this.createDomNode();
     }
 

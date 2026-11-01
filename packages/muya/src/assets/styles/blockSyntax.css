@@ -210,7 +210,7 @@
 .mu-container blockquote::before {
     position: absolute;
     top: 0;
-    left: 15px;
+    inset-inline-start: 15px;
 
     display: block;
     width: 2px;
@@ -1151,4 +1151,23 @@ pre.mu-active.mu-fenced-code::after {
 
 .mu-container figure.mu-footnote > i.mu-footnote-backlink:hover {
     color: var(--theme-color);
+}
+
+/* Bidi direction for list and quote containers. `dir="auto"` skips descendants
+   that carry their own `dir`, so containers cannot resolve from their text; they
+   take the direction of their first child paragraph (which resolves itself).
+   Mirrors the marker side and the logical padding of nested lists. */
+li:has(> p:dir(rtl)),
+blockquote:has(> p:dir(rtl)) {
+    direction: rtl;
+}
+
+li:has(> p:dir(ltr)),
+blockquote:has(> p:dir(ltr)) {
+    direction: ltr;
+}
+
+ul.mu-bullet-list:has(> li:first-child > p:dir(rtl)),
+ol.mu-order-list:has(> li:first-child > p:dir(rtl)) {
+    direction: rtl;
 }

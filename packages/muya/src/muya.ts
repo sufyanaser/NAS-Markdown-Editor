@@ -26,6 +26,7 @@ import { attachReadingEvents, prepareReadingLinks } from './editor/readOnly';
 import EventCenter from './event/index';
 
 import I18n from './i18n/index';
+import { applyTextDirection, normalizeTextDirection } from './rtl/textDirection';
 import {
     injectSentinels,
     injectStateSentinels,
@@ -203,6 +204,7 @@ export class Muya {
         this.options = Object.assign({}, MUYA_DEFAULT_OPTIONS, options ?? {});
         this.eventCenter = new EventCenter();
         this.domNode = getContainer(element, this.options);
+        applyTextDirection(this.domNode, normalizeTextDirection(this.options.textDirection));
         this.editor = new Editor(this);
         this.ui = new Ui(this);
         this.i18n = new I18n(this, this.options.locale);
@@ -378,6 +380,9 @@ export class Muya {
         if (typeof options.readOnly === 'boolean')
             this.setReadOnly(options.readOnly);
         Object.assign(this.options, options);
+
+        if ('textDirection' in options)
+            applyTextDirection(this.domNode, normalizeTextDirection(this.options.textDirection));
 
         if ('spellcheckEnabled' in options)
             this.domNode.setAttribute('spellcheck', options.spellcheckEnabled ? 'true' : 'false');

@@ -602,6 +602,7 @@
         "title": "Misceláneos",
         "textDirection": {
           "title": "Dirección del Texto",
+          "auto": "Automático",
           "ltr": "Izquierda a Derecha",
           "rtl": "Derecha a Izquierda"
         },

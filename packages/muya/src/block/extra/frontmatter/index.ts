@@ -1,6 +1,7 @@
 import type { Muya } from '../../../muya';
 import type { IFrontmatterMeta, IFrontmatterState } from '../../../state/types';
 import type { TBlockPath } from '../../types';
+import { fixedLtrDirectionAttributes } from '../../../rtl/textDirection';
 import logger from '../../../utils/logger';
 import { loadLanguage } from '../../../utils/prism';
 import Parent from '../../base/parent';
@@ -82,6 +83,7 @@ class Frontmatter extends Parent {
         const [start, end] = delimiters(meta);
         this.attributes.frontMatterStart = start;
         this.attributes.frontMatterEnd = end;
+        this.attributes = { ...this.attributes, ...fixedLtrDirectionAttributes() };
         this.createDomNode();
     }
 

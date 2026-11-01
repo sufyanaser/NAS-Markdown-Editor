@@ -15,7 +15,7 @@
   "defaultDirectoryToOpen": "",
   "lastOpenedFolder": "",
   "treePathExcludePatterns": [],
-  "language": "en",
+  "language": "ar",
 
   "editorFontFamily": "Open Sans",
   "fontSize": 16,
@@ -36,7 +36,7 @@
   "autoGuessEncoding": true,
   "autoNormalizeLineEndings": false,
   "trimTrailingNewline": 2,
-  "textDirection": "ltr",
+  "textDirection": "auto",
   "hideQuickInsertHint": false,
   "imageInsertAction": "path",
   "imagePreferRelativeDirectory": false,

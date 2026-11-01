@@ -7,6 +7,7 @@ export enum ChangeSource {
 
 export interface IMuyaOptions {
     readOnly: boolean;
+    textDirection: 'auto' | 'ltr' | 'rtl';
     fontSize: number;
     lineHeight: number;
     editorFontFamily?: string;

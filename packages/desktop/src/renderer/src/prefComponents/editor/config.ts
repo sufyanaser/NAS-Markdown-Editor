@@ -57,6 +57,10 @@ export const getTrimTrailingNewlineOptions = (): PrefSelectOption<number>[] => [
 
 export const getTextDirectionOptions = (): PrefSelectOption<string>[] => [
   {
+    label: t('preferences.editor.misc.textDirection.auto'),
+    value: 'auto'
+  },
+  {
     label: t('preferences.editor.misc.textDirection.ltr'),
     value: 'ltr'
   },

@@ -1,0 +1,77 @@
+name: NAS Windows installer
+
+# Builds the Windows x64 NSIS installer on a Windows runner. The installer is
+# offline: electron-builder embeds the packed application into the .exe, so no
+# .nsis.7z next to it is required. The artifact is kept for download only; no
+# GitHub Release is created here.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/nas-markdown-editor]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nas-windows-installer-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-windows-x64:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Windows x64 installer
+        working-directory: packages/desktop
+        run: pnpm run build:win:x64
+
+      - name: Verify installer is self-contained
+        shell: pwsh
+        working-directory: packages/desktop
+        run: |
+          $exe = Get-ChildItem -Path dist -Filter 'nas-markdown-editor-win-x64-*-setup.exe' | Select-Object -First 1
+          if (-not $exe) { throw 'Installer .exe not found in dist/' }
+          $sizeMB = [math]::Round($exe.Length / 1MB, 1)
+          Write-Host "Installer size: $sizeMB MB"
+          # The packed application is well over 100 MB; a small stub means the payload is external.
+          if ($exe.Length -lt 100MB) { throw "Installer is $sizeMB MB; payload is not embedded" }
+
+      - name: Rename, hash and write checksum
+        shell: pwsh
+        working-directory: packages/desktop
+        run: |
+          $src = Get-ChildItem -Path dist -Filter 'nas-markdown-editor-win-x64-*-setup.exe' | Select-Object -First 1
+          $dst = Join-Path $PWD 'NAS-Markdown-Editor-Windows-x64-Setup.exe'
+          Copy-Item $src.FullName $dst -Force
+          $hash = (Get-FileHash -Algorithm SHA256 $dst).Hash.ToLower()
+          $size = (Get-Item $dst).Length
+          "$hash  NAS-Markdown-Editor-Windows-x64-Setup.exe" | Out-File -Encoding ascii SHA256SUMS.txt
+          "## NAS Markdown Editor - Windows x64 installer" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "- File: NAS-Markdown-Editor-Windows-x64-Setup.exe" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "- Size: $size bytes" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "- SHA-256: $hash" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "- Commit: $env:GITHUB_SHA" | Out-File -Append $env:GITHUB_STEP_SUMMARY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NAS-Markdown-Editor-Windows-x64-Setup
+          path: |
+            packages/desktop/NAS-Markdown-Editor-Windows-x64-Setup.exe
+            packages/desktop/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14

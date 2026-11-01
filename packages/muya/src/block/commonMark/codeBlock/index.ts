@@ -2,6 +2,7 @@ import type { Muya } from '../../../muya';
 import type { ICodeBlockState } from '../../../state/types';
 import type { TBlockPath } from '../../types';
 import diff from 'fast-diff';
+import { fixedLtrDirectionAttributes } from '../../../rtl/textDirection';
 import { diffToTextOp, firstWordOfInfo } from '../../../utils';
 import { operateClassName } from '../../../utils/dom';
 import logger from '../../../utils/logger';
@@ -138,6 +139,7 @@ class CodeBlock extends Parent {
             this.classList.push('mu-tilde-fence');
         if (muya.options.codeBlockLineNumbers)
             this.classList.push('mu-line-numbers');
+        this.attributes = fixedLtrDirectionAttributes();
         this.createDomNode();
     }
 

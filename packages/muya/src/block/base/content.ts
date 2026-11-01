@@ -8,6 +8,7 @@ import diff from 'fast-diff';
 import TreeNode from '../../block/base/treeNode';
 import { ScrollPage } from '../../block/scrollPage';
 import { BACK_HASH, BRACKET_HASH, CLASS_NAMES, EVENT_KEYS, isOsx } from '../../config';
+import { isRtlContext } from '../../rtl/textDirection';
 import Selection from '../../selection';
 import { offsetInBlockAtPoint } from '../../selection/dom';
 import { ChangeSource } from '../../types';
@@ -477,7 +478,7 @@ class Content extends TreeNode {
     }
 
     private _revealArrowSelectionTarget(event: KeyboardEvent, start: number, end: number): void {
-        const rtl = this.domNode?.closest('[dir]')?.getAttribute('dir') === 'rtl';
+        const rtl = isRtlContext(this.domNode);
         const backwards = event.key === EVENT_KEYS.ArrowUp || event.key === (rtl ? EVENT_KEYS.ArrowRight : EVENT_KEYS.ArrowLeft);
         if (backwards ? start !== 0 : end !== this.text.length)
             return;
@@ -592,7 +593,7 @@ class Content extends TreeNode {
     private _arrowDirection(event: KeyboardEvent, offset: number, textLength: number): 'up' | 'down' | null {
         // In RTL the physical Left/Right arrows are visually mirrored, so the
         // cross-block boundary keys swap (offset 0 is the visual right end).
-        const isRtl = this.domNode?.closest('[dir]')?.getAttribute('dir') === 'rtl';
+        const isRtl = isRtlContext(this.domNode);
         const prevKey = isRtl ? EVENT_KEYS.ArrowRight : EVENT_KEYS.ArrowLeft;
         const nextKey = isRtl ? EVENT_KEYS.ArrowLeft : EVENT_KEYS.ArrowRight;
 

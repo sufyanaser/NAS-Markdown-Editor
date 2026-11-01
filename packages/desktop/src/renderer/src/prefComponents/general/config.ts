@@ -101,6 +101,10 @@ export const getLanguageOptions = (): PrefSelectOption<string>[] => [
     value: 'en'
   },
   {
+    label: 'العربية',
+    value: 'ar'
+  },
+  {
     label: t('preferences.general.misc.language.chinese'),
     value: 'zh-CN'
   },

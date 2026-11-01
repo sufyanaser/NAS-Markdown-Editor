@@ -390,8 +390,14 @@ describe('content arrowHandler — skips empty sibling containers (#4644)', () =
 // mirrored, so the cross-block boundary keys must swap. Offset 0 is the visual
 // RIGHT end of an RTL line (ArrowRight should go to the previous block); offset
 // === text.length is the visual LEFT end (ArrowLeft should go to the next).
+// Boots with the forced RTL text direction so paragraphs carry dir="rtl" and
+// the arrow mapping under test is the mirrored one (auto would resolve the
+// English fixtures to LTR and must not be mirrored).
 function bootMuyaRtl(markdown: string): Muya {
-    const muya = bootMuya(markdown);
+    const host = document.createElement('div');
+    document.body.appendChild(host);
+    const muya = new Muya(host, { markdown, textDirection: 'rtl' } as ConstructorParameters<typeof Muya>[1]);
+    muya.init();
     muya.domNode.setAttribute('dir', 'rtl');
     return muya;
 }

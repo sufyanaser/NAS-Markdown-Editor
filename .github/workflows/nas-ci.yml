@@ -1,0 +1,47 @@
+name: NAS CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nas-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Muya typecheck and unit tests
+        run: |
+          pnpm --filter @muyajs/core build:types
+          pnpm --filter @muyajs/core test
+
+      - name: Desktop typecheck
+        run: pnpm --filter marktext run typecheck
+
+      - name: Desktop build
+        run: pnpm --filter marktext run build

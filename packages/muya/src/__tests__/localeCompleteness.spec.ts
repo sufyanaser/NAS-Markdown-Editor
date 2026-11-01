@@ -6,12 +6,13 @@ import * as locales from '../locales';
 // `name` tag identifying it. Missing keys would surface untranslated strings;
 // extra keys are dead weight. `en` is the source of truth.
 
-const { de, en, es, fr, ja, ko, nl, pt, ru, tr, zhCN, zhTW } = locales;
+const { ar, de, en, es, fr, ja, ko, nl, pt, ru, tr, zhCN, zhTW } = locales;
 
 // Spelled out rather than derived from `locales` so the name-tag suite below
 // asserts against an independent expectation instead of the value it checks.
 // `covers every locale the package exports` keeps the two in sync.
 const nonEnLocales: Array<[string, typeof en]> = [
+    ['ar', ar],
     ['de', de],
     ['es', es],
     ['fr', fr],
@@ -77,6 +78,7 @@ describe('locale completeness', () => {
 
     describe('locale name tags', () => {
         const expected: Record<string, string> = {
+            'ar': 'ar',
             'de': 'de',
             'es': 'es',
             'fr': 'fr',

@@ -1,7 +1,7 @@
 export type { ISerializedHistory } from './history';
 export type { ILocale } from './i18n/types';
 
-export { de, en, es, fr, ja, ko, nl, pt, ru, tr, zhCN, zhTW } from './locales';
+export { ar, de, en, es, fr, ja, ko, nl, pt, ru, tr, zhCN, zhTW } from './locales';
 export { Muya } from './muya';
 export type { IMatch, IReplaceOption, ISearchOption } from './search/types';
 export type { IIndexCursor } from './selection/offsetCursor';
@@ -12,6 +12,8 @@ export { renderToStaticHTML } from './state/renderToStaticHTML';
 export type { IRenderToStaticHTMLOptions } from './state/renderToStaticHTML';
 export type { TState } from './state/types';
 export { ChangeSource } from './types';
+export { normalizeTextDirection } from './rtl/textDirection';
+export type { TextDirectionMode } from './rtl/textDirection';
 export type { IMuyaOptions } from './types';
 
 export { CodeBlockLanguageSelector } from './ui/codeBlockLanguageSelector';

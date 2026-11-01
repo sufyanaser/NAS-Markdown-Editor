@@ -1,5 +1,6 @@
-appId: com.github.marktext.marktext
-productName: MarkText
+appId: com.sufyanaser.nasmarkdowneditor
+productName: NAS Markdown Editor
+copyright: Copyright (c) 2017-present Luo Ran; Copyright (c) 2026 NAS FM 98.7
 directories:
   buildResources: build
   output: ../../dist
@@ -31,6 +32,15 @@ files:
   - '!eslint.config.js'
   - '!jsconfig.json'
   - '!docs/*'
+# Updates are served only from releases of the NAS repository. A release is
+# visible to the updater only once it is published; drafts stay invisible, so
+# publishing the GitHub release is the approval step.
+publish:
+  provider: github
+  owner: sufyanaser
+  repo: NAS-Markdown-Editor
+  releaseType: release
+
 extraResources:
   - from: build/icons
     to: icons
@@ -65,6 +75,7 @@ electronLanguages: # Keep Chromium/AppKit locales for the UI languages MarkText 
   - zh-TW
   - zh_CN
   - zh_TW
+  - ar
 
 electronFuses:
   # Node's CLI parser inside Electron rejects `--debug` (DEP0062, exit 9) before
@@ -116,14 +127,13 @@ fileAssociations:
     role: Editor
     icon: icons/md.ico
 win:
-  executableName: marktext
-  artifactName: 'marktext-win-${arch}-${version}.${ext}'
+  executableName: nas-markdown-editor
+  artifactName: 'nas-markdown-editor-win-${arch}-${version}.${ext}'
   target:
     - target: 'nsis'
-    - target: 'zip'
-  icon: static/icon.ico
+  icon: build/icons/icon.ico
 nsis:
-  artifactName: 'marktext-win-${arch}-${version}-setup.${ext}'
+  artifactName: 'nas-markdown-editor-win-${arch}-${version}-setup.${ext}'
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: true

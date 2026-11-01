@@ -1,0 +1,1071 @@
+{
+  "menu": {
+    "counter": {
+      "words": "الكلمات",
+      "characters": "الأحرف",
+      "charactersNoSpaces": "الأحرف (بدون مسافات)",
+      "charactersWithSpaces": "الأحرف (مع المسافات)",
+      "paragraphs": "الفقرات",
+      "allCharacters": "جميع الأحرف",
+      "document": "المستند",
+      "documentSelection": "المستند / التحديد"
+    },
+    "file": {
+      "file": "ملف",
+      "newTab": "تبويب جديد",
+      "newWindow": "نافذة جديدة",
+      "openFile": "فتح ملف...",
+      "openFolder": "فتح مجلد...",
+      "openRecent": "فتح الأخير",
+      "clearRecentlyUsed": "مسح العناصر الأخيرة",
+      "save": "حفظ",
+      "saveAs": "حفظ باسم...",
+      "autoSave": "الحفظ التلقائي",
+      "moveTo": "نقل إلى",
+      "rename": "إعادة التسمية",
+      "export": "تصدير",
+      "exportHtml": "تصدير كـ HTML",
+      "exportPdf": "تصدير كـ PDF",
+      "convertWithPandoc": "تحويل باستخدام Pandoc",
+      "import": "استيراد",
+      "print": "طباعة",
+      "closeTab": "إغلاق التبويب",
+      "closeWindow": "إغلاق النافذة",
+      "quit": "إنهاء",
+      "preferences": "التفضيلات"
+    },
+    "edit": {
+      "edit": "تحرير",
+      "undo": "تراجع",
+      "redo": "إعادة",
+      "cut": "قص",
+      "copy": "نسخ",
+      "paste": "لصق",
+      "copyAsRich": "نسخ كنص منسّق",
+      "copyAsHtml": "نسخ كـ HTML",
+      "pasteAsPlainText": "لصق كنص عادي",
+      "selectAll": "تحديد الكل",
+      "duplicate": "تكرار",
+      "createParagraph": "إنشاء فقرة",
+      "deleteParagraph": "حذف الفقرة",
+      "find": "بحث",
+      "replace": "استبدال",
+      "findNext": "البحث عن التالي",
+      "findPrevious": "البحث عن السابق",
+      "findInFolder": "البحث في المجلد",
+      "screenshot": "لقطة شاشة",
+      "lineEnding": "نهاية السطر",
+      "lineEndingCrlf": "CRLF (ويندوز)",
+      "lineEndingLf": "LF (لينكس/ماك)"
+    },
+    "paragraph": {
+      "title": "فقرة",
+      "paragraph": "فقرة",
+      "heading1": "عنوان 1",
+      "heading2": "عنوان 2",
+      "heading3": "عنوان 3",
+      "heading4": "عنوان 4",
+      "heading5": "عنوان 5",
+      "heading6": "عنوان 6",
+      "promoteHeading": "رفع مستوى العنوان",
+      "demoteHeading": "خفض مستوى العنوان",
+      "table": "جدول",
+      "codeFences": "كتلة كود",
+      "quoteBlock": "اقتباس",
+      "githubAlerts": "تنبيهات GitHub",
+      "mathBlock": "كتلة معادلات",
+      "htmlBlock": "كتلة HTML",
+      "orderedList": "قائمة مرقمة",
+      "bulletList": "قائمة نقطية",
+      "taskList": "قائمة مهام",
+      "looseListItem": "عنصر قائمة فضفاض",
+      "horizontalRule": "خط فاصل أفقي",
+      "frontMatter": "بيانات التعريف (Front Matter)"
+    },
+    "window": {
+      "title": "النافذة",
+      "minimize": "تصغير",
+      "zoomIn": "تكبير",
+      "zoomOut": "تصغير العرض",
+      "resetZoom": "إعادة الحجم الأصلي",
+      "fullScreen": "ملء الشاشة",
+      "bringAllToFront": "إحضار الكل إلى الأمام",
+      "alwaysOnTop": "دائماً في الأعلى"
+    },
+    "help": {
+      "help": "مساعدة",
+      "markdownReference": "مرجع Markdown",
+      "changelog": "سجل التغييرات",
+      "askQuestion": "طرح سؤال",
+      "reportBug": "الإبلاغ عن خطأ",
+      "viewSource": "عرض المصدر",
+      "followUs": "تابعنا",
+      "support": "دعم NAS Markdown Editor",
+      "license": "الترخيص",
+      "about": "حول",
+      "checkUpdates": "التحقق من التحديثات"
+    },
+    "marktext": {
+      "title": "NAS Markdown Editor",
+      "about": "حول NAS Markdown Editor",
+      "checkUpdates": "التحقق من التحديثات...",
+      "preferences": "التفضيلات",
+      "services": "الخدمات",
+      "hide": "إخفاء NAS Markdown Editor",
+      "hideOthers": "إخفاء الآخرين",
+      "showAll": "إظهار الكل",
+      "quit": "إنهاء NAS Markdown Editor"
+    },
+    "view": {
+      "view": "عرض",
+      "toggleSidebar": "إظهار/إخفاء الشريط الجانبي",
+      "toggleTabbar": "إظهار/إخفاء شريط التبويبات",
+      "commandPalette": "لوحة الأوامر",
+      "sourceCodeMode": "وضع الكود المصدري",
+      "typewriterMode": "وضع الآلة الكاتبة",
+      "focusMode": "وضع التركيز",
+      "toggleTableOfContents": "عرض فهرس المحتويات",
+      "reloadImages": "إعادة تحميل الصور",
+      "showDeveloperTools": "عرض أدوات المطوّر",
+      "reloadWindow": "إعادة تحميل النافذة"
+    },
+    "format": {
+      "format": "تنسيق",
+      "bold": "غامق",
+      "italic": "مائل",
+      "underline": "تسطير",
+      "strikethrough": "شطب",
+      "image": "صورة",
+      "superscript": "حرف فوقي",
+      "subscript": "حرف تحتي",
+      "highlight": "تمييز",
+      "inlineCode": "كود مضمّن",
+      "inlineMath": "معادلة مضمّنة",
+      "hyperlink": "رابط تشعبي",
+      "clearFormat": "مسح التنسيق"
+    },
+    "theme": {
+      "theme": "&السمة",
+      "dark": "داكن",
+      "followThemDisabled": "اختيار السمة معطّل عند اتباع سمة النظام",
+      "lightThemes": "السمات الفاتحة",
+      "darkThemes": "السمات الداكنة",
+      "ayuDark": "Ayu Dark",
+      "ayuLight": "Ayu Light",
+      "ayuMirage": "Ayu Mirage",
+      "cadmiumDark": "Cadmium Dark",
+      "cadmiumLight": "Cadmium Light",
+      "catppuccinLatte": "Catppuccin Latte",
+      "catppuccinMocha": "Catppuccin Mocha",
+      "cyberdream": "cyberdream",
+      "dracula": "Dracula",
+      "everforestDark": "Everforest Dark",
+      "everforestLight": "Everforest Light",
+      "graphiteLight": "Graphite Light",
+      "gruvboxDark": "Gruvbox Dark",
+      "gruvboxLight": "Gruvbox Light",
+      "horizonDark": "Horizon Dark",
+      "kanagawa": "Kanagawa",
+      "materialDark": "Material Dark",
+      "monokaiPro": "Monokai Pro",
+      "nightfox": "Nightfox",
+      "nord": "Nord",
+      "oneDark": "One Dark",
+      "oxocarbonDark": "Oxocarbon Dark",
+      "palenight": "Palenight",
+      "rosePine": "Rosé Pine",
+      "rosePineDawn": "Rosé Pine Dawn",
+      "rosePineMoon": "Rosé Pine Moon",
+      "solarizedDark": "Solarized Dark",
+      "solarizedLight": "Solarized Light",
+      "synthwave84": "Synthwave '84",
+      "tokyoNight": "Tokyo Night",
+      "tokyoNightLight": "Tokyo Night Light",
+      "tokyoNightStorm": "Tokyo Night Storm",
+      "ulyssesLight": "Ulysses Light"
+    }
+  },
+  "contextMenu": {
+    "cut": "قص",
+    "copy": "نسخ",
+    "paste": "لصق",
+    "copyAsRich": "نسخ كنص منسّق",
+    "copyAsHtml": "نسخ كـ HTML",
+    "pasteAsPlainText": "لصق كنص عادي",
+    "lookUp": "بحث عن \"{selection}\"",
+    "insertParagraphBefore": "إدراج فقرة قبل",
+    "insertParagraphAfter": "إدراج فقرة بعد",
+    "spelling": "التدقيق الإملائي...",
+    "changeLanguage": "تغيير اللغة...",
+    "addToDictionary": "إضافة إلى القاموس",
+    "editDictionary": "تحرير القاموس...",
+    "sideBar": {
+      "newFile": "ملف جديد",
+      "newDirectory": "مجلد جديد",
+      "copy": "نسخ",
+      "cut": "قص",
+      "paste": "لصق",
+      "rename": "إعادة التسمية",
+      "moveToTrash": "نقل إلى سلة المهملات",
+      "copyPath": "نسخ المسار",
+      "showInFolder": "عرض في المجلد"
+    },
+    "tabs": {
+      "close": "إغلاق",
+      "closeOthers": "إغلاق الآخرين",
+      "closeSavedTabs": "إغلاق التبويبات المحفوظة",
+      "closeAllTabs": "إغلاق جميع التبويبات",
+      "rename": "إعادة التسمية",
+      "copyPath": "نسخ المسار",
+      "showInFolder": "عرض في المجلد",
+      "showInSideBar": "عرض في الشريط الجانبي"
+    }
+  },
+  "search": {
+    "searchPlaceholder": "بحث",
+    "caseSensitive": "حساسية حالة الأحرف",
+    "wholeWord": "تحديد الكلمة كاملة",
+    "useRegex": "استخدام الاستعلام كتعبير نمطي",
+    "replacementPlaceholder": "الاستبدال",
+    "replaceAll": "استبدال الكل",
+    "replaceSingle": "استبدال واحد",
+    "invalidRegex": "تعبير نمطي غير صالح \"{pattern}\"",
+    "regexMatchEmpty": "التعبير النمطي \"{pattern}\" يطابق سلسلة فارغة",
+    "searchResultInfo": "{matchCount} تطابقًا في {fileCount} ملفًا",
+    "searchLimited": "تم تقييد البحث بأول {count} نتيجة"
+  },
+  "sideBar": {
+    "search": {
+      "backToFiles": "العودة إلى الملفات",
+      "searchInFolder": "البحث في المجلد...",
+      "noFolderOpen": "لا يوجد مجلد مفتوح",
+      "noResultsFound": "لا توجد نتائج.",
+      "cancel": "إلغاء",
+      "openFolder": "فتح مجلد",
+      "showMoreMatches": "عرض المزيد من التطابقات"
+    },
+    "tree": {
+      "openedFiles": "الملفات المفتوحة",
+      "saveAll": "حفظ الكل",
+      "closeAll": "إغلاق الكل",
+      "emptyProject": "المشروع فارغ",
+      "createFile": "إنشاء ملف",
+      "openFolder": "فتح مجلد"
+    },
+    "toc": {
+      "expand": "توسيع فهرس المحتويات",
+      "collapse": "طيّ فهرس المحتويات",
+      "empty": "لا توجد عناوين",
+      "title": "فهرس المحتويات",
+      "expandAll": "توسيع الكل",
+      "collapseAll": "طيّ الكل"
+    },
+    "icons": {
+      "files": "الملفات",
+      "search": "بحث",
+      "settings": "الإعدادات"
+    }
+  },
+  "titleBar": {
+    "applicationMenu": "قائمة التطبيق",
+    "minimize": "تصغير",
+    "maximize": "تكبير",
+    "restore": "استعادة",
+    "close": "إغلاق",
+    "documentStatistics": {
+      "title": "إحصاءات المستند",
+      "fileInformation": "معلومات الملف",
+      "created": "تاريخ الإنشاء",
+      "lastModified": "آخر تعديل",
+      "unavailable": "—",
+      "open": "فتح إحصاءات المستند"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "اكتب أمرًا لتنفيذه",
+    "placeholders": {
+      "selectOption": "اختر خيارًا",
+      "searchFileToOpen": "ابحث عن ملف لفتحه",
+      "selectLanguage": "اختر لغة للتبديل إليها"
+    }
+  },
+  "exportSettings": {
+    "autoNumberingHeadings": "ترقيم العناوين تلقائيًا",
+    "title": "خيارات التصدير",
+    "page": {
+      "label": "الصفحة",
+      "pageTitle": "عنوان الصفحة",
+      "pageSize": "حجم الصفحة:",
+      "landscapeOrientation": "الاتجاه الأفقي:",
+      "pageMargin": "هامش الصفحة بالمليمتر:",
+      "topBottom": "أعلى/أسفل:",
+      "leftRight": "يسار/يمين:",
+      "widthHeight": "العرض/الارتفاع بالمليمتر:"
+    },
+    "showFrontMatter": "عرض بيانات التعريف",
+    "style": {
+      "label": "النمط",
+      "overwriteThemeFont": "تجاوز إعدادات خط السمة",
+      "fontFamily": "عائلة الخط:",
+      "fontSize": "حجم الخط",
+      "lineHeight": "ارتفاع السطر"
+    },
+    "theme": {
+      "label": "السمة",
+      "description": "يمكنك تغيير مظهر المستند باختيار سمة، أو إنشاء سمة خاصة بك.",
+      "theme": "السمة"
+    },
+    "headerFooter": {
+      "allowStyled": "السماح بالنص المنسّق",
+      "customizeStyle": "تخصيص النمط",
+      "fontSize": "حجم الخط",
+      "footerType": "نوع التذييل",
+      "headerType": "نوع الترويسة",
+      "label": "الترويسة والتذييل",
+      "leftFooterText": "نص التذييل الأيسر",
+      "leftHeaderText": "نص الترويسة الأيسر",
+      "mainFooterText": "نص التذييل الرئيسي",
+      "mainHeaderText": "نص الترويسة الرئيسي",
+      "rightFooterText": "نص التذييل الأيمن",
+      "rightHeaderText": "نص الترويسة الأيمن",
+      "description": "يظهر النص في جميع الصفحات إذا تم تحديد الترويسة و/أو التذييل."
+    },
+    "toc": {
+      "description": "لعرض فهرس المحتويات في المستند المصدّر، اكتب [TOC] في سطر مستقل داخل المستند. سيظهر الفهرس في ذلك الموضع.",
+      "includeTopHeading": "تضمين العناوين من المستوى 1",
+      "includeTopHeadingDetail": "تضمين جميع عناوين المستوى الأول (H1) في فهرس المحتويات.",
+      "label": "فهرس المحتويات",
+      "title": "فهرس المحتويات"
+    },
+    "export": "تصدير",
+    "options": {
+      "pageSizes": {
+        "a3": "A3 (297 × 420 مم)",
+        "a4": "A4 (210 × 297 مم)",
+        "a5": "A5 (148 × 210 مم)",
+        "legal": "US Legal (8.5 × 13 بوصة)",
+        "letter": "US Letter (8.5 × 11 بوصة)",
+        "tabloid": "Tabloid (17 × 11 بوصة)",
+        "custom": "مخصص"
+      },
+      "headerFooterTypes": {
+        "none": "بدون",
+        "singleCell": "خلية واحدة",
+        "threeCells": "ثلاث خلايا"
+      },
+      "headerFooterStyles": {
+        "default": "افتراضي",
+        "simple": "بسيط",
+        "styled": "منسّق"
+      },
+      "themes": {
+        "academic": "أكاديمي",
+        "default": "GitHub (افتراضي)",
+        "liber": "Liber"
+      }
+    }
+  },
+  "recent": {
+    "noTabsOpen": "لا توجد تبويبات مفتوحة.",
+    "newFile": "ملف جديد"
+  },
+  "import": {
+    "title": "استيراد أو فتح",
+    "description": "أفلت الملفات هنا لإدخالها إلى MarkText"
+  },
+  "preferences": {
+    "title": "التفضيلات",
+    "learnMore": "اعرف المزيد عن {name}",
+    "search": {
+      "placeholder": "ابحث في التفضيلات...",
+      "categories": {
+        "general": "عام",
+        "editor": "المحرر",
+        "markdown": "Markdown",
+        "theme": "السمة",
+        "image": "الصور",
+        "view": "العرض",
+        "searcher": "البحث",
+        "watcher": "المراقبة",
+        "spelling": "التدقيق الإملائي",
+        "custom css": "CSS مخصص"
+      },
+      "items": {
+        "autoSave": "حفظ المحتوى قيد التحرير تلقائياً",
+        "autoSaveDelay": "الزمن بالمللي ثانية بعد التغيير قبل حفظ الملف",
+        "titleBarStyle": "نمط شريط العنوان (لأنظمة Windows و Linux فقط)",
+        "openFilesInNewWindow": "فتح الملفات في نافذة جديدة",
+        "openFilesInPreviewMode": "فتح ملفات الشريط الجانبي في تبويبات المعاينة",
+        "openFolderInNewWindow": "فتح المجلد عبر القائمة في نافذة جديدة",
+        "zoom": "مستوى التكبير بين 0.5 و 2.0 (شاملة)",
+        "hideScrollbar": "إخفاء أشرطة التمرير",
+        "wordWrapInToc": "تفعيل التفاف النص في فهرس المحتويات",
+        "fileSortBy": "ترتيب الملفات في المجلد المفتوح حسب وقت الإنشاء أو التعديل أو العنوان",
+        "startUpAction": "الإجراء بعد بدء MarkText: فتح آخر محتوى محرر أو مجلد محدد أو صفحة فارغة",
+        "restoreLayoutState": "استعادة حالة المحرر السابقة عند بدء التشغيل",
+        "defaultDirectoryToOpen": "المجلد الافتراضي الذي يُفتح عند بدء التشغيل عندما يكون startUp=folder",
+        "language": "اللغة التي يستخدمها MarkText",
+        "editorFontFamily": "عائلة خط المحرر",
+        "fontSize": "حجم الخط بالبكسل",
+        "lineHeight": "ارتفاع السطر",
+        "wrapCodeBlocks": "التفاف النص داخل كتل الشيفرة",
+        "editorLineWidth": "يحدد أقصى عرض لمنطقة المحرر. يُسمح بسلسلة فارغة أو اللواحق ch (أحرف) أو px (بكسل) أو % (نسبة)",
+        "codeFontSize": "حجم الخط في كتلة الشيفرة، ضمن النطاق 12 ~ 18",
+        "codeFontFamily": "عائلة خط الشيفرة. تُطبّق على الشيفرة المضمّنة وكتل الشيفرة.",
+        "codeBlockLineNumbers": "إظهار أرقام الأسطر",
+        "sourceCodeLineNumbers": "إظهار أرقام الأسطر في وضع الشيفرة المصدرية",
+        "trimUnnecessaryCodeBlockEmptyLines": "قص الأسطر الفارغة في بداية كتلة الشيفرة ونهايتها",
+        "autoPairBracket": "إغلاق الأقواس تلقائياً أثناء التحرير",
+        "autoPairMarkdownSyntax": "إكمال صياغة Markdown تلقائياً",
+        "autoPairQuote": "إكمال علامات الاقتباس تلقائياً",
+        "endOfLine": "محرف السطر الجديد المستخدم في نهاية كل سطر. القيمة الافتراضية default تختار محرف نظام التشغيل",
+        "defaultEncoding": "ترميز الملفات الافتراضي",
+        "autoGuessEncoding": "محاولة تخمين ترميز الملف تلقائياً عند فتحه",
+        "trimTrailingNewline": "خيار قص سطر النهاية الجديد",
+        "textDirection": "اتجاه كتابة النص",
+        "hideQuickInsertHint": "إخفاء تلميح الإدراج السريع للفقرات",
+        "hideLinkPopup": "إخفاء نافذة الرابط عند تمرير المؤشر فوقه",
+        "autoCheck": "تحديد المهام المرتبطة تلقائياً",
+        "preferLooseListItem": "نوع القائمة المفضّل",
+        "bulletListMarker": "العلامة المستخدمة في القوائم النقطية",
+        "orderListDelimiter": "الفاصل المستخدم في القوائم المرقّمة",
+        "preferHeadingStyle": "نمط العناوين المفضّل في MarkText",
+        "tabSize": "استبدال الجدولة بعدد x من المسافات",
+        "listIndentation": "اختر مسافة إزاحة القوائم",
+        "frontmatterType": "نوع Frontmatter",
+        "superSubScript": "تفعيل امتداد pandoc للصيغة: الأس والأس السفلي",
+        "footnote": "تفعيل امتداد pandoc للصيغة: الهوامش السفلية",
+        "texMathDollars": "تفعيل امتداد pandoc للصيغة: tex_math_dollars",
+        "texMathGfm": "تفعيل امتداد pandoc للصيغة: tex_math_gfm",
+        "texMathSingleBackslash": "تفعيل امتداد pandoc للصيغة: tex_math_single_backslash",
+        "texMathDoubleBackslash": "تفعيل امتداد pandoc للصيغة: tex_math_double_backslash",
+        "highlightSyntax": "تفعيل صياغة التمييز غير القياسية ==نص==",
+        "inlineDiff": "تفعيل صياغة الفرق المضمّن غير القياسية {+ … +} / [- … -]",
+        "multilineBlockquote": "تفعيل صياغة الاقتباس متعدد الأسطر غير القياسية >>> … >>>",
+        "githubAlerts": "تنبيهات GitHub",
+        "isHtmlEnabled": "تفعيل عرض HTML",
+        "softNewlineAsSpace": "معاملة أسطر الانتقال الناعمة كمسافات",
+        "sequenceTheme": "سمة مخطط التسلسل",
+        "plantumlServer": "عنوان خادم PlantUML",
+        "theme": "اختر السمة المستخدمة في MarkText",
+        "followSystemTheme": "اتباع سمة النظام",
+        "lightModeTheme": "السمة عندما يكون النظام في الوضع الفاتح",
+        "darkModeTheme": "السمة عندما يكون النظام في الوضع الداكن",
+        "spellcheckerEnabled": "تفعيل التدقيق الإملائي",
+        "spellcheckerNoUnderline": "عدم تسطير الأخطاء الإملائية",
+        "spellcheckerLanguage": "لغة التدقيق الإملائي",
+        "imageInsertAction": "السلوك الافتراضي بعد إدراج صورة من مجلد محلي",
+        "imagePreferRelativeDirectory": "تفضيل المسار النسبي للصور",
+        "imageRelativeDirectoryBase": "المكان الذي تُنسخ إليه الصور النسبية",
+        "imageRelativeDirectoryName": "اسم مجلد الصور النسبي",
+        "autoNormalizeLineEndings": "توحيد نهايات الأسطر تلقائياً عند فتح الملفات. عند التعطيل تُفتح الملفات كما هي.",
+        "fileSortOrder": "ترتيب الملفات في المجلدات المفتوحة: تصاعدي أو تنازلي.",
+        "openedFilesInSidebar": "إظهار الملفات المفتوحة في الشريط الجانبي.",
+        "showPandocConvert": "إظهار قائمة تحويل Pandoc. يتطلب تثبيت Pandoc."
+      }
+    },
+    "categories": {
+      "general": "عام",
+      "editor": "المحرر",
+      "markdown": "Markdown",
+      "spelling": "التدقيق الإملائي",
+      "theme": "السمة",
+      "image": "الصور",
+      "keybindings": "اختصارات لوحة المفاتيح"
+    },
+    "general": {
+      "title": "عام",
+      "autoSave": {
+        "title": "الحفظ التلقائي",
+        "description": "الحفظ التلقائي",
+        "delayDescription": "تأخير الحفظ التلقائي"
+      },
+      "window": {
+        "title": "النافذة",
+        "titleBarStyle": {
+          "title": "نمط شريط العنوان",
+          "custom": "مخصص",
+          "native": "أصلي"
+        },
+        "requiresRestart": "يتطلب إعادة التشغيل",
+        "hideScrollbars": "إخفاء أشرطة التمرير",
+        "openFilesInNewWindow": "فتح الملفات في نافذة جديدة",
+        "openFoldersInNewWindow": "فتح المجلدات في نافذة جديدة",
+        "zoom": "التكبير"
+      },
+      "startup": {
+        "title": "خيارات بدء التشغيل",
+        "layoutOptions": "خيارات التخطيط",
+        "startupFilesFolders": "ملفات ومجلدات بدء التشغيل",
+        "restorePreviousState": "استعادة حالة المحرر السابقة",
+        "openBlankState": "فتح حالة فارغة",
+        "openDefaultDirectory": "فتح المجلد الافتراضي",
+        "openLastFolder": "استعادة المجلد المفتوح",
+        "restoreAll": "استعادة جميع الملفات والمجلدات المفتوحة",
+        "selectFolder": "اختيار مجلد",
+        "openBlankPage": "فتح صفحة فارغة"
+      },
+      "pandoc": {
+        "title": "تحويل Pandoc",
+        "description": "إظهار قائمة تحويل Pandoc",
+        "detailedDescription": "يتطلب تثبيت Pandoc",
+        "found": "تم العثور عليه: {path}",
+        "notFound": "غير موجود",
+        "recheck": "إعادة الفحص"
+      },
+      "sidebar": {
+        "title": "الشريط الجانبي",
+        "wrapTextInToc": "التفاف النص في فهرس المحتويات",
+        "showOpenedFiles": "إظهار الملفات المفتوحة",
+        "autoReveal": "إظهار الملف النشط في الشريط الجانبي",
+        "openFilesInPreviewMode": "فتح ملفات الشريط الجانبي في تبويبات المعاينة. التحرير أو النقر المزدوج يُبقي التبويب مفتوحاً.",
+        "excludePatterns": "أنماط الاستبعاد",
+        "excludePatternsNotes": "أنماط الاستبعاد (الملاحظات)",
+        "fileSortBy": {
+          "title": "ترتيب الملفات حسب",
+          "creationTime": "وقت الإنشاء",
+          "modificationTime": "وقت التعديل",
+          "filename": "اسم الملف"
+        },
+        "fileSortOrder": {
+          "title": "ترتيب الفرز",
+          "aToZ": "A ← Z",
+          "zToA": "Z ← A",
+          "oldestFirst": "الأقدم أولاً",
+          "newestFirst": "الأحدث أولاً"
+        }
+      },
+      "misc": {
+        "title": "متفرقات",
+        "language": {
+          "title": "اللغة",
+          "english": "English",
+          "chinese": "简体中文",
+          "traditionalChinese": "繁體中文",
+          "spanish": "Español",
+          "french": "Français",
+          "german": "Deutsch",
+          "japanese": "日本語",
+          "korean": "한국어",
+          "dutch": "Nederlands",
+          "portuguese": "Português",
+          "turkish": "Türkçe",
+          "russian": "Русский"
+        }
+      }
+    },
+    "editor": {
+      "title": "المحرر",
+      "textEditor": {
+        "title": "محرر النص",
+        "fontSize": "حجم الخط",
+        "lineHeight": "ارتفاع السطر",
+        "fontFamily": "عائلة الخط",
+        "maxWidth": "أقصى عرض",
+        "maxWidthNotes": "أقصى عرض لمحتوى المحرر. أدخل رقماً متبوعاً بـ px أو ch (أحرف) أو %، مثل 800px أو 80ch أو 60%. اتركه فارغاً لاستخدام العرض الافتراضي.",
+        "maxWidthInvalid": "أدخل رقماً متبوعاً بـ px أو ch أو %، مثل 800px.",
+        "codeFontFamily": "عائلة خط الشيفرة",
+        "codeFontFamilyNotes": "تُطبّق على الشيفرة المضمّنة وكتل الشيفرة."
+      },
+      "codeBlock": {
+        "title": "كتلة الشيفرة",
+        "fontSize": "حجم الخط",
+        "showLineNumbers": "إظهار أرقام الأسطر",
+        "removeEmptyLines": "إزالة الأسطر الفارغة"
+      },
+      "writingBehavior": {
+        "title": "سلوك الكتابة",
+        "autoCloseBrackets": "إغلاق الأقواس تلقائياً",
+        "autoCompleteMarkdown": "إكمال Markdown تلقائياً",
+        "autoCloseQuotes": "إغلاق علامات الاقتباس تلقائياً"
+      },
+      "fileRepresentation": {
+        "title": "تمثيل الملف",
+        "tabWidth": "عرض الجدولة",
+        "lineSeparator": "فاصل الأسطر",
+        "defaultEncoding": "الترميز الافتراضي",
+        "autoDetectEncoding": "اكتشاف الترميز تلقائياً",
+        "trailingNewlines": {
+          "title": "أسطر النهاية الجديدة",
+          "doNothing": "لا تفعل شيئاً",
+          "ensureOne": "ضمان سطر واحد",
+          "preserve": "الاحتفاظ بها",
+          "trimAll": "قص الكل"
+        },
+        "endOfLine": {
+          "default": "افتراضي",
+          "crlf": "CRLF (Windows)",
+          "lf": "LF (Linux/Mac)"
+        }
+      },
+      "misc": {
+        "title": "متفرقات",
+        "textDirection": {
+          "title": "اتجاه النص",
+          "auto": "تلقائي",
+          "ltr": "من اليسار إلى اليمين",
+          "rtl": "من اليمين إلى اليسار"
+        },
+        "hideQuickInsertHint": "إخفاء تلميح الإدراج السريع",
+        "hideLinkPopup": "إخفاء نافذة الرابط",
+        "autoCheck": "التحديد التلقائي",
+        "autoNormalizeLineEndings": "توحيد نهايات الأسطر إلى LF تلقائياً عند الفتح",
+        "wrapCodeBlocks": "التفاف كتل الشيفرة",
+        "sourceCodeLineNumbers": "إظهار أرقام الأسطر في وضع الشيفرة المصدرية"
+      }
+    },
+    "image": {
+      "title": "الصور",
+      "actions": {
+        "upload": "رفع إلى السحابة",
+        "folder": "نسخ إلى مجلد",
+        "path": "استخدام المسار المطلق"
+      },
+      "folderSetting": {
+        "title": "إعدادات المجلد",
+        "globalFolder": "مجلد الصور العام",
+        "open": "فتح",
+        "showInFolder": "إظهار في المجلد",
+        "preferRelative": "تفضيل المجلد النسبي",
+        "relativeCopyLocation": "نسخ الصورة نسبةً إلى",
+        "copyRelativeToFile": "نسبةً إلى الملف",
+        "copyRelativeToFolder": "نسبةً إلى المجلد",
+        "relativeFolderName": "اسم المجلد النسبي",
+        "filenameNote": "سيتم إنشاء اسم الملف تلقائياً."
+      },
+      "uploader": {
+        "title": "رافع الصور",
+        "currentUploader": "الرافع الحالي: {name}",
+        "picgoNotInstalled": "PicGo غير مثبت",
+        "picgoInstalled": "PicGo مثبت",
+        "picgoDetectionFailed": "فشل اكتشاف PicGo",
+        "debugInfo": "معلومات التصحيح",
+        "npmInstallCommand": "npm install picgo -g",
+        "yarnInstallCommand": "yarn global add picgo",
+        "pnpmInstallCommand": "pnpm add -g picgo",
+        "chooseInstallMethod": "اختر طريقة التثبيت:",
+        "retestPicgo": "إعادة الاختبار",
+        "lastDetectionTime": "آخر وقت اكتشاف",
+        "picgoDetection": "اكتشاف PicGo",
+        "usageGuide": {
+          "title": "دليل الاستخدام الأساسي لـ PicGo",
+          "step1": "إعداد الرافع",
+          "step1Description": "استخدم الأمر التالي لإعداد رافع PicGo:",
+          "step2": "رفع الصور",
+          "step2Description": "استخدم الأمر التالي لرفع الصور:",
+          "step3": "عرض الإعدادات",
+          "step3Description": "استخدم الأمر التالي لعرض الإعدادات الحالية:",
+          "documentation": "عرض التوثيق الكامل"
+        },
+        "lastSuccessTime": "آخر وقت نجاح",
+        "neverDetected": "لم يُكتشف مطلقاً",
+        "neverSuccessful": "لم ينجح مطلقاً",
+        "scriptDescription": "وصف السكربت",
+        "scriptLocation": "موقع السكربت",
+        "save": "حفظ",
+        "saveConfig": "حفظ الإعدادات",
+        "scriptConfigSaved": "تم حفظ إعدادات السكربت",
+        "services": {
+          "picgo": "PicGo",
+          "cliScript": "سكربت سطر الأوامر"
+        },
+        "pleaseInstall": "يرجى التثبيت",
+        "scriptPath": "مسار السكربت"
+      },
+      "defaultBehavior": "السلوك الافتراضي بعد لصق الصورة أو سحبها إلى MarkText"
+    },
+    "markdown": {
+      "title": "Markdown",
+      "extensions": {
+        "title": "الإضافات",
+        "superSubScript": "أس/أس سفلي",
+        "footnote": "هامش سفلي",
+        "footnoteNotes": "ملاحظات الهوامش السفلية",
+        "texMathDollars": "TeX math بالعلامة $ و $$",
+        "texMathGfm": "TeX math بأسلوب GitHub ($`…`$ و ```math)",
+        "texMathSingleBackslash": "TeX math بفاصل الشرطة المائلة المفردة",
+        "texMathDoubleBackslash": "TeX math بفاصل الشرطة المائلة المزدوجة",
+        "highlightSyntax": "تمييز (==نص==)",
+        "inlineDiff": "فرق مضمّن ({+ … +})",
+        "multilineBlockquote": "اقتباس متعدد الأسطر (>>>)",
+        "githubAlerts": "تفعيل تنبيهات GitHub",
+        "frontmatterType": {
+          "jsonBrace": "JSON بأقواس",
+          "jsonSemicolon": "JSON بفاصلة منقوطة",
+          "title": "نوع Frontmatter"
+        }
+      },
+      "diagrams": {
+        "title": "المخططات",
+        "sequenceTheme": {
+          "title": "سمة مخطط التسلسل",
+          "handDrawn": "بخط اليد",
+          "simple": "بسيط"
+        },
+        "plantumlServer": {
+          "title": "عنوان خادم PlantUML"
+        }
+      },
+      "misc": {
+        "preferHeadingStyle": {
+          "title": "نمط العناوين المفضّل",
+          "atx": "نمط ATX",
+          "setext": "نمط Setext"
+        },
+        "title": "متفرقات"
+      },
+      "compatibility": {
+        "enableHtml": "تفعيل دعم HTML",
+        "softNewlineAsSpace": "معاملة أسطر الانتقال الناعمة كمسافات",
+        "title": "التوافق"
+      },
+      "lists": {
+        "bulletListMarker": "علامة القائمة النقطية",
+        "listIndentation": {
+          "title": "إزاحة القوائم",
+          "dfm": "نمط DFM",
+          "fourSpaces": "أربع مسافات",
+          "oneSpace": "مسافة واحدة",
+          "tab": "جدولة",
+          "threeSpaces": "ثلاث مسافات",
+          "twoSpaces": "مسافتان"
+        },
+        "orderListDelimiter": "فاصل القوائم المرقّمة",
+        "preferLooseListItem": "تفضيل عناصر القائمة المتباعدة",
+        "title": "القوائم"
+      }
+    },
+    "theme": {
+      "title": "السمة",
+      "followSystemTheme": "اتباع سمة النظام",
+      "followSystemNote": "اتباع النظام يقفل قائمة السمات أدناه. عطّل هذا الخيار لتبديل السمات بحرية.",
+      "modeThemes": "اختيار السمة",
+      "lightModeTheme": "سمة الوضع الفاتح",
+      "darkModeTheme": "سمة الوضع الداكن",
+      "customCss": "CSS مخصص",
+      "importCustomThemes": "استيراد السمات المخصصة",
+      "importTheme": "استيراد سمة",
+      "openFolder": "فتح المجلد",
+      "openThemesFolder": "فتح مجلد السمات"
+    },
+    "keybindings": {
+      "title": "اختصارات لوحة المفاتيح",
+      "description": "تخصيص اختصارات لوحة المفاتيح",
+      "save": "حفظ",
+      "restoreDefaults": "استعادة الافتراضيات",
+      "debugOptions": "خيارات التصحيح",
+      "dumpKeyboardInfo": "تفريغ معلومات لوحة المفاتيح",
+      "failedToSave": "فشل حفظ اختصارات لوحة المفاتيح",
+      "keyInputDialog": {
+        "instructions": "اضغط مجموعة المفاتيح التي تريد تعيينها",
+        "invalidKeybinding": "مجموعة مفاتيح غير صالحة",
+        "placeholder": "اضغط المفاتيح..."
+      },
+      "online": "متصل",
+      "saveError": "خطأ أثناء حفظ الاختصارات",
+      "shortcutInUse": "الاختصار مستخدم",
+      "shortcutInUseMessage": "هذا الاختصار مُعيّن بالفعل إلى {accelerator}",
+      "table": {
+        "description": "الوصف",
+        "edit": "تعديل",
+        "keyCombination": "مجموعة المفاتيح",
+        "options": "خيارات",
+        "reset": "إعادة التعيين",
+        "unbind": "إلغاء الربط"
+      }
+    },
+    "selectFont": "اختيار الخط",
+    "spellchecker": {
+      "autoDetectDescription": "اكتشاف لغة المستند تلقائياً",
+      "autoDetectLanguage": "اكتشاف اللغة تلقائياً",
+      "customDictionary": {
+        "delete": "حذف",
+        "description": "أضف كلمات مخصصة إلى قاموسك الشخصي",
+        "noWordsAvailable": "لا توجد كلمات",
+        "options": "خيارات",
+        "title": "القاموس المخصص",
+        "word": "الكلمة"
+      },
+      "defaultLanguage": "اللغة الافتراضية",
+      "enableSpellChecking": "تفعيل التدقيق الإملائي",
+      "hideMarksForErrors": "إخفاء علامات الأخطاء الإملائية",
+      "title": "المدقق الإملائي"
+    }
+  },
+  "about": {
+    "copyright": "حقوق النشر © Luo Ran 2017-{year}",
+    "copyrightContributors": "صُنع بـ <3 بواسطة مساهمي GitHub"
+  },
+  "commands": {
+    "mt": {
+      "hide": "إخفاء MarkText",
+      "hideOthers": "إخفاء الآخرين"
+    },
+    "file": {
+      "newWindow": "نافذة جديدة",
+      "newTab": "تبويب جديد",
+      "openFile": "فتح ملف",
+      "openFolder": "فتح مجلد",
+      "save": "حفظ",
+      "saveAs": "حفظ باسم",
+      "moveFile": "نقل الملف",
+      "renameFile": "إعادة تسمية الملف",
+      "quickOpen": "فتح سريع",
+      "changeEncoding": "تغيير الترميز",
+      "changeLineEnding": "تغيير نهاية السطر",
+      "trailingNewline": "سطر النهاية الجديد",
+      "print": "طباعة",
+      "preferences": "التفضيلات",
+      "closeTab": "إغلاق التبويب",
+      "closeWindow": "إغلاق النافذة",
+      "quit": "إنهاء",
+      "toggleAutoSave": "تبديل الحفظ التلقائي",
+      "importFile": "استيراد ملف",
+      "revealInSideBar": "إظهار في الشريط الجانبي",
+      "exportFile": "تصدير ملف",
+      "exportFilePdf": "تصدير كـ PDF",
+      "zoom": "التكبير",
+      "checkUpdate": "التحقق من التحديثات"
+    },
+    "edit": {
+      "undo": "تراجع",
+      "redo": "إعادة",
+      "cut": "قص",
+      "copy": "نسخ",
+      "paste": "لصق",
+      "copyAsRich": "نسخ كنص منسّق",
+      "copyAsHtml": "نسخ كـ HTML",
+      "pasteAsPlaintext": "لصق كنص عادي",
+      "selectAll": "تحديد الكل",
+      "duplicate": "تكرار",
+      "createParagraph": "إنشاء فقرة",
+      "deleteParagraph": "حذف الفقرة",
+      "find": "بحث",
+      "findNext": "البحث التالي",
+      "findPrevious": "البحث السابق",
+      "replace": "استبدال",
+      "findInFolder": "بحث في المجلد",
+      "screenshot": "لقطة شاشة"
+    },
+    "paragraph": {
+      "heading1": "عنوان 1",
+      "heading2": "عنوان 2",
+      "heading3": "عنوان 3",
+      "heading4": "عنوان 4",
+      "heading5": "عنوان 5",
+      "heading6": "عنوان 6",
+      "upgradeHeading": "ترقية العنوان",
+      "degradeHeading": "خفض مستوى العنوان",
+      "table": "جدول",
+      "codeFence": "كتلة شيفرة",
+      "quoteBlock": "كتلة اقتباس",
+      "mathFormula": "معادلة رياضية",
+      "htmlBlock": "كتلة HTML",
+      "orderList": "قائمة مرقّمة",
+      "bulletList": "قائمة نقطية",
+      "taskList": "قائمة مهام",
+      "looseListItem": "عنصر قائمة متباعد",
+      "paragraph": "فقرة",
+      "horizontalLine": "خط أفقي",
+      "frontMatter": "Front Matter",
+      "resetParagraph": "إعادة ضبط الفقرة",
+      "mathBlock": "كتلة رياضيات",
+      "horizontalRule": "فاصل أفقي"
+    },
+    "format": {
+      "strong": "غامق",
+      "emphasis": "مائل",
+      "underline": "تسطير",
+      "superscript": "أس علوي",
+      "subscript": "أس سفلي",
+      "highlight": "تمييز",
+      "inlineCode": "شيفرة مضمّنة",
+      "inlineMath": "رياضيات مضمّنة",
+      "strike": "يتوسطه خط",
+      "hyperlink": "رابط تشعبي",
+      "image": "صورة",
+      "clearFormat": "مسح التنسيق"
+    },
+    "window": {
+      "minimize": "تصغير",
+      "close": "إغلاق",
+      "toggleAlwaysOnTop": "تبديل البقاء في الأعلى",
+      "zoomIn": "تكبير",
+      "zoomOut": "تصغير",
+      "toggleFullScreen": "تبديل ملء الشاشة",
+      "changeTheme": "تغيير السمة"
+    },
+    "view": {
+      "commandPalette": "لوحة الأوامر",
+      "sourceCodeMode": "وضع الشيفرة المصدرية",
+      "typewriterMode": "وضع الآلة الكاتبة",
+      "focusMode": "وضع التركيز",
+      "toggleSourceCodeMode": "تبديل وضع الشيفرة المصدرية",
+      "toggleTypewriterMode": "تبديل وضع الآلة الكاتبة",
+      "toggleFocusMode": "تبديل وضع التركيز",
+      "toggleSidebar": "تبديل الشريط الجانبي",
+      "toggleToc": "تبديل فهرس المحتويات",
+      "toggleTabbar": "تبديل شريط التبويبات",
+      "toggleDevTools": "تبديل أدوات المطوّر",
+      "devReload": "إعادة التحميل للمطوّر",
+      "reloadImages": "إعادة تحميل الصور",
+      "textDirection": "اتجاه النص",
+      "actualSize": "الحجم الفعلي",
+      "devToggleDeveloperTools": "تبديل أدوات المطوّر"
+    },
+    "tabs": {
+      "cycleForward": "التبديل للأمام",
+      "cycleBackward": "التبديل للخلف",
+      "switchToLeft": "الانتقال إلى اليسار",
+      "switchToRight": "الانتقال إلى اليمين",
+      "switchToFirst": "الانتقال إلى الأول",
+      "switchToSecond": "الانتقال إلى الثاني",
+      "switchToThird": "الانتقال إلى الثالث",
+      "switchToFourth": "الانتقال إلى الرابع",
+      "switchToFifth": "الانتقال إلى الخامس",
+      "switchToSixth": "الانتقال إلى السادس",
+      "switchToSeventh": "الانتقال إلى السابع",
+      "switchToEighth": "الانتقال إلى الثامن",
+      "switchToNinth": "الانتقال إلى التاسع",
+      "switchToTenth": "الانتقال إلى العاشر"
+    },
+    "docs": {
+      "userGuide": "دليل المستخدم",
+      "markdownSyntax": "صياغة Markdown"
+    },
+    "spellchecker": {
+      "switchLanguage": "تبديل اللغة"
+    }
+  },
+  "common": {
+    "cancel": "إلغاء",
+    "ok": "موافق"
+  },
+  "dialog": {
+    "moveToTrash": "هل أنت متأكد من نقل \"{name}\" إلى سلة المهملات؟",
+    "cancel": "إلغاء",
+    "changesWillBeLost": "ستُفقد التغييرات",
+    "close": "إغلاق",
+    "dontSave": "عدم الحفظ",
+    "file": "ملف",
+    "fileExists": "الملف موجود {filename}",
+    "files": "الملفات",
+    "importWarning": "تحذير الاستيراد",
+    "installPandoc": "لم يُعثر على Pandoc. ثبّته، أو اضبط متغير البيئة MARKTEXT_PANDOC ليشير إلى ملف pandoc التنفيذي، ثم أعد تشغيل MarkText.",
+    "exportWarning": "تحذير التصدير",
+    "exportWarningMore": "…و {count} آخرون",
+    "keepOpen": "إبقاؤه مفتوحاً",
+    "replace": "استبدال",
+    "save": "حفظ",
+    "saveChanges": "حفظ التغييرات",
+    "saveFailure": "فشل الحفظ",
+    "unsafeFileTitle": "ملف قد يكون غير آمن",
+    "unsafeFileMessage": "يفتح هذا الرابط ملفاً قادراً على تشغيل الشيفرة",
+    "unsafeFileDetail": "\"{name}\" ملف تنفيذي أو نصي برمجي. قد يؤدي فتحه إلى تشغيل برامج على حاسوبك. تابع فقط إذا كنت تثق بهذا المستند.",
+    "openAnyway": "فتح على أي حال"
+  },
+  "error": {
+    "configSchemaViolation": "مخالفة مخطط الإعدادات",
+    "copyError": "خطأ في النسخ",
+    "initializationFailed": "فشلت التهيئة {hint}",
+    "otherInstanceDetected": "نسخة أخرى من MarkText تعمل بالفعل",
+    "report": "إبلاغ",
+    "startupError": "خطأ في بدء التشغيل",
+    "terminatedDueToError": "أُنهي بسبب خطأ",
+    "unexpectedErrorWithMessage": "خطأ غير متوقع: {message}",
+    "unexpectedMainProcess": "خطأ غير متوقع في العملية الرئيسية",
+    "unexpectedRendererProcess": "خطأ غير متوقع في عملية العرض"
+  },
+  "notifications": {
+    "defaultMessage": "رسالة افتراضية",
+    "defaultTitle": "إشعار"
+  },
+  "store": {
+    "editor": {
+      "anchorLinkCopied": "تم نسخ رابط المرساة",
+      "tabNotFound": "التبويب غير موجود",
+      "tocItemNotFound": "العنصر {key} غير موجود في فهرس المحتويات",
+      "errorLoadingTabTitle": "خطأ في تحميل التبويب",
+      "errorLoadingTabMessage": "حدث خطأ أثناء تحميل تغييرات الملف لأن التبويب غير موجود.",
+      "mixedLineEndingsNormalized": "\"{name}\" يحتوي على نهايات أسطر مختلطة تم توحيدها تلقائياً إلى {lineEnding}.",
+      "imageDeletionUrlTitle": "رابط حذف الصورة",
+      "imageDeletionUrlMessage": "انقر لنسخ رابط حذف الصورة المرفوعة إلى الحافظة {url}",
+      "errorWhileSaving": "حدث خطأ أثناء الحفظ: {msg}",
+      "exportSuccessTitle": "تم التصدير بنجاح",
+      "exportSuccessMessage": "تم تصدير \"{name}\" بنجاح!",
+      "exportLinkedMediaMessage": "تم تصدير \"{name}\". يربط هذا التنسيق الصور بدلاً من تضمينها، لذا احتفظ بالصور بجانب الملف وشارك المجلد كاملاً.",
+      "fileRemovedOnDisk": "تمت إزالة \"{name}\" من القرص.",
+      "fileChangedOnDisk": "تم تغيير \"{name}\" على القرص. هل تريد إعادة تحميله؟"
+    }
+  },
+  "spellchecker": {
+    "failedToRemoveWord": "فشلت إزالة الكلمة من القاموس",
+    "unexpectedError": "خطأ غير متوقع في المدقق الإملائي"
+  },
+  "editor": {
+    "export": {
+      "error": "خطأ في التصدير",
+      "errorExporting": "خطأ أثناء تصدير ملف {type}",
+      "failed": "فشل تصدير {type}"
+    },
+    "insertTable": {
+      "title": "إدراج جدول",
+      "rows": "الصفوف",
+      "columns": "الأعمدة"
+    },
+    "mediaViewer": {
+      "title": "معاينة",
+      "close": "إغلاق",
+      "zoomIn": "تكبير",
+      "zoomOut": "تصغير",
+      "fit": "ملاءمة للنافذة",
+      "actualSize": "الحجم الفعلي",
+      "saveTitle": "حفظ المخطط",
+      "saveSvg": "حفظ كـ SVG",
+      "savePng": "حفظ كـ PNG",
+      "copyImage": "نسخ الصورة",
+      "copied": "تم نسخ الصورة إلى الحافظة",
+      "saveFailed": "تعذّر حفظ الصورة: {error}",
+      "copyFailed": "تعذّر نسخ الصورة: {error}"
+    },
+    "notifications": {
+      "notificationNotFound": "الإشعار غير موجود"
+    },
+    "print": {
+      "error": "خطأ طباعة لـ \"{title}\"",
+      "failed": "فشلت الطباعة"
+    },
+    "sourceCode": {
+      "cursorNullComment": "تعليق المؤشر الفارغ",
+      "imageStructureDeletedComment": "تعليق حذف بنية الصورة"
+    },
+    "spellcheck": {
+      "disabledError": "خطأ: التدقيق الإملائي معطّل",
+      "errorSwitchingLanguage": "خطأ في تبديل لغة التدقيق الإملائي {languageCode}",
+      "languageMissing": "لغة التدقيق الإملائي مفقودة {languageCode}",
+      "switchError": "خطأ في تبديل التدقيق الإملائي لـ {languageCode}، {error}",
+      "title": "التدقيق الإملائي"
+    },
+    "tabs": {
+      "close": "إغلاق {name}",
+      "preview": "{name}، تبويب معاينة"
+    }
+  },
+  "readingMode": {
+    "title": "وضع القراءة",
+    "edit": "وضع التحرير",
+    "lock": "الدخول إلى وضع القراءة",
+    "unlock": "التبديل إلى وضع التحرير",
+    "defaultMode": "الوضع الافتراضي للملفات المفتوحة",
+    "defaultNote": "يُطبّق على الملفات الموجودة عند فتحها من الآن فصاعداً. تبقى المستندات الجديدة قابلة للتحرير.",
+    "unsaved": "وضع القراءة مفعّل. تُحفظ التغييرات غير المحفوظة ويُوقف الحفظ التلقائي.",
+    "failed": "تعذّر تبديل وضع المستند",
+    "closeSave": "التبديل إلى وضع التحرير والحفظ",
+    "exportSource": "اختر وجهة تصدير غير الملف المصدر.",
+    "unavailable": "غير متاح في وضع القراءة",
+    "skipped": "تم تخطي المستندات للقراءة فقط التي بها تغييرات غير محفوظة.",
+    "viewImage": "عرض الصورة",
+    "copyLink": "نسخ عنوان الرابط",
+    "resumed": "وضع التحرير مفعّل. استُؤنف الحفظ التلقائي."
+  }
+}

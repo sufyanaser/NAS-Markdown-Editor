@@ -149,6 +149,7 @@ import { SyntheticHistory, type IFileHistoryLike } from './syntheticHistory'
 import '@muyajs/core'
 import '@/assets/themes/codemirror/one-dark.css'
 import { type InputNumberInstance } from 'element-plus'
+import { normalizeTextDirection } from '@muyajs/core'
 
 const { t } = useI18n()
 const STANDAR_Y = 320
@@ -520,6 +521,10 @@ watch(theme, (value, oldValue) => {
       )
     }
   }
+})
+
+watch(() => props.textDirection, (value) => {
+  editor.value?.setOptions({ textDirection: normalizeTextDirection(value) })
 })
 
 watch(sequenceTheme, (value, oldValue) => {
@@ -1708,6 +1713,7 @@ onMounted(() => {
     focusMode: focus.value,
     markdown: props.markdown,
     readOnly: !!currentFile.value?.readOnly,
+    textDirection: normalizeTextDirection(props.textDirection),
     locale: getMuyaLocale(language.value),
     preferLooseListItem: preferLooseListItem.value,
     autoPairBracket: autoPairBracket.value,

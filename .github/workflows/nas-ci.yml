@@ -29,8 +29,14 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      - name: Install Linux build dependencies
+        run: sudo apt-get update && sudo apt-get install -y libx11-dev libxkbfile-dev libsecret-1-dev
+
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Run postinstall
+        run: pnpm tsx scripts/postinstall.ts
 
       - name: Lint
         run: pnpm run lint

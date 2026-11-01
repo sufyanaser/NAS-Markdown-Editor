@@ -7,7 +7,10 @@ name: NAS Windows release
 
 on:
   push:
-    tags: ['nas-v*']
+    tags:
+      - 'nas-v*'
+      - 'v0.23.0-nas.1'
+      - 'v*-nas*'
   workflow_dispatch:
 
 permissions:
@@ -29,8 +32,15 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Run postinstall
+        run: pnpm tsx scripts/postinstall.ts
 
       - name: Verify
         run: |
@@ -40,6 +50,14 @@ jobs:
 
       - name: Build installer
         run: pnpm --filter marktext run build:win:x64
+
+      - name: Generate checksums
+        shell: pwsh
+        run: |
+          Get-ChildItem -Path dist -Filter 'nas-markdown-editor-win-x64-*-setup.exe' | ForEach-Object {
+            $hash = (Get-FileHash -Algorithm SHA256 $_.FullName).Hash.ToLower()
+            "$hash  $($_.Name)" | Out-File -Encoding ascii -Append dist/SHA256SUMS.txt
+          }
 
       - name: Create draft release
         shell: bash
@@ -52,4 +70,5 @@ jobs:
             --notes "Draft build. Publish to make it available to the in-app updater." \
             dist/nas-markdown-editor-win-x64-*-setup.exe \
             dist/nas-markdown-editor-win-x64-*-setup.exe.blockmap \
-            dist/latest.yml
+            dist/latest.yml \
+            dist/SHA256SUMS.txt

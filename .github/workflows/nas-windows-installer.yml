@@ -8,7 +8,7 @@ name: NAS Windows installer
 on:
   workflow_dispatch:
   push:
-    branches: [feature/nas-markdown-editor]
+    branches: [develop, feature/nas-markdown-editor]
 
 permissions:
   contents: read
@@ -33,16 +33,21 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Run postinstall
+        run: pnpm tsx scripts/postinstall.ts
 
       - name: Build Windows x64 installer
-        working-directory: packages/desktop
-        run: pnpm run build:win:x64
+        run: pnpm --filter marktext run build:win:x64
 
       - name: Verify installer is self-contained
         shell: pwsh
-        working-directory: packages/desktop
         run: |
           $exe = Get-ChildItem -Path dist -Filter 'nas-markdown-editor-win-x64-*-setup.exe' | Select-Object -First 1
           if (-not $exe) { throw 'Installer .exe not found in dist/' }
@@ -53,14 +58,13 @@ jobs:
 
       - name: Rename, hash and write checksum
         shell: pwsh
-        working-directory: packages/desktop
         run: |
           $src = Get-ChildItem -Path dist -Filter 'nas-markdown-editor-win-x64-*-setup.exe' | Select-Object -First 1
-          $dst = Join-Path $PWD 'NAS-Markdown-Editor-Windows-x64-Setup.exe'
+          $dst = Join-Path 'dist' 'NAS-Markdown-Editor-Windows-x64-Setup.exe'
           Copy-Item $src.FullName $dst -Force
           $hash = (Get-FileHash -Algorithm SHA256 $dst).Hash.ToLower()
           $size = (Get-Item $dst).Length
-          "$hash  NAS-Markdown-Editor-Windows-x64-Setup.exe" | Out-File -Encoding ascii SHA256SUMS.txt
+          "$hash  NAS-Markdown-Editor-Windows-x64-Setup.exe" | Out-File -Encoding ascii dist/SHA256SUMS.txt
           "## NAS Markdown Editor - Windows x64 installer" | Out-File -Append $env:GITHUB_STEP_SUMMARY
           "- File: NAS-Markdown-Editor-Windows-x64-Setup.exe" | Out-File -Append $env:GITHUB_STEP_SUMMARY
           "- Size: $size bytes" | Out-File -Append $env:GITHUB_STEP_SUMMARY
@@ -71,7 +75,7 @@ jobs:
         with:
           name: NAS-Markdown-Editor-Windows-x64-Setup
           path: |
-            packages/desktop/NAS-Markdown-Editor-Windows-x64-Setup.exe
-            packages/desktop/SHA256SUMS.txt
+            dist/NAS-Markdown-Editor-Windows-x64-Setup.exe
+            dist/SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 14

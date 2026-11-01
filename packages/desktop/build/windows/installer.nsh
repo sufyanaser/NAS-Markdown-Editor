@@ -10,7 +10,7 @@
 ; The ProgID name must stay stable across versions: Windows pins a user's
 ; "Open with" choice to it, and renaming it would orphan that choice.
 !define MT_PROGID "NASMarkdownEditor.Document"
-!define MT_CMD_OPEN '"$INSTDIR\nas-markdown-editor.exe" "%1"'
+!define MT_CMD_OPEN '$\"$INSTDIR\nas-markdown-editor.exe$\" $\"%1$\"'
 
 !macro mtOpenWithExtension EXT
   WriteRegNone SHELL_CONTEXT "Software\Classes\${EXT}\OpenWithProgids" "${MT_PROGID}"
@@ -58,13 +58,11 @@
   WriteRegStr SHELL_CONTEXT "Software\Classes\${MT_PROGID}" "" "NAS Markdown Document"
   WriteRegExpandStr SHELL_CONTEXT "Software\Classes\${MT_PROGID}\DefaultIcon" \
     "" "$INSTDIR\resources\icons\md.ico,0"
-  WriteRegExpandStr SHELL_CONTEXT "Software\Classes\${MT_PROGID}\shell\open\command" \
-    "" "${MT_CMD_OPEN}"
+  WriteRegExpandStr SHELL_CONTEXT "Software\Classes\${MT_PROGID}\shell\open\command" "" ${MT_CMD_OPEN}
 
   ; electron-builder's own ProgId (`Markdown`) carries an unquoted command path,
   ; which breaks when the install directory contains a space. Quote it.
-  WriteRegExpandStr SHELL_CONTEXT "Software\Classes\Markdown\shell\open\command" \
-    "" "${MT_CMD_OPEN}"
+  WriteRegExpandStr SHELL_CONTEXT "Software\Classes\Markdown\shell\open\command" "" ${MT_CMD_OPEN}
 
   ; Explorer caches file type handlers until sign-in otherwise.
   System::Call 'shell32::SHChangeNotify(i, i, i, i) v (0x08000000, 0, 0, 0)'
